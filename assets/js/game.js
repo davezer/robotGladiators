@@ -15,18 +15,18 @@ var fight = function(enemyName) {
     if (promptFight === "fight" || promptFight === "FIGHT") {
         enemyHealth = enemyHealth - playerAttack;
         console.log(
-          playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
+          playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
         );
       
         if (enemyHealth <= 0) {
-          window.alert(enemyNames + " has died!");
+          window.alert(enemyName + " has died!");
         } else {
-          window.alert(enemyNames + " still has " + enemyHealth + " health left.");
+          window.alert(enemyName + " still has " + enemyHealth + " health left.");
         }
       
         playerHealth = playerHealth - enemyAttack;
         console.log(
-          enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+          enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
         );
 
         if (playerHealth <= 0) {
