@@ -1,4 +1,4 @@
-
+// FIGHT FUNCTION
 var fight = function(enemy) {
        while (playerInfo.health > 0 && enemy.health > 0) {
         var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -43,6 +43,7 @@ var fight = function(enemy) {
             }
     }
 };
+// START GAME FUNCTION
 
 var startGame = function() {
 
@@ -51,7 +52,7 @@ var startGame = function() {
     for (var i = 0; i < enemyInfo.length; i++) {
         if (playerInfo.health > 0) {
             window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
-            
+                        
             var pickedEnemyObj = enemyInfo[i];
 
             pickedEnemyObj.health = randomNumber(40, 60);
@@ -73,6 +74,7 @@ var startGame = function() {
     }
     endGame();
 };
+// END GAME FUNCTION
 
 var endGame = function() {
     window.alert("The game has now ended. Let's see how you did!");
@@ -94,7 +96,7 @@ var endGame = function() {
     }
 };
 
-
+// SHOP FUNCTION
 var shop = function() {
     var shopOptionPrompt = window.prompt("Would you like REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice");
 
@@ -119,15 +121,33 @@ var shop = function() {
             break;
     }
 };
-
+// RANDOM NUMBER FUNCTION 
 var randomNumber = function(min, max) {
     var value = Math.floor(Math.random() * (max - min + 1) + min);
   
     return value;
   };
 
+
+// GET PLAYER NAME FUNCTION
+
+var getPlayerName = function() {
+    var name = "";
+    //ADD LOOP HERE WITH PROMPT AND CONDITION
+    while (name === "" || name === null){
+        name = prompt("What is your robot's name?")
+    }
+    console.log("Your robot's name is " + name);
+    return name;
+}
+
+
+
+
+// PLAYER INFO OBJECT 
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
